@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5vh 6vw;
+  height: 9.5vh;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.nav-title {
+  font-size: 1.9vw;
+  font-weight: 500;
+  color: #000000;
+
+}
+
+/* Right Section */
+.admin-btn {
+  background-color: #155DFC;
+  color: #ffffff;
+  border: none;
+  padding: 1.5vh 1.8vw;
+  font-size:1.5vw;
+  width: 9vw;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-btn:hover {
+  background-color: #1f56b6;
+}
