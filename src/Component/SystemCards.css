@@ -177,3 +177,77 @@ background-color: #ffffff;
   height:14px;
   fill:#ffffff;   /* white drop */
 }
+.popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.popup{
+  width:500px;
+  background:white;
+  border-radius:12px;
+  padding:30px;
+  text-align:center;
+  position:relative;
+}
+
+.close-btn{
+  position:absolute;
+  right:20px;
+  top:10px;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.popup-icon{
+  width:60px;
+  height:60px;
+  background:#e9ecff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  font-size:28px;
+}
+.popup h2{
+   color:#4F67FF ; 
+}
+
+.success-box{
+  background:#e8f5ec;
+  padding:12px;
+  border-radius:10px;
+  margin:18px 0;
+  color:#0a8f3d;
+}
+
+.popup-img{
+  width:200px;
+  margin-top:10px;
+}
+
+/* UP message */
+.success-green{
+  background-color:#e8f7ec;
+  border:1px solid #2ecc71;
+  color:#2ecc71;
+  padding:12px;
+  border-radius:8px;
+}
+
+/* DOWN message */
+.error-box{
+  background-color:#fdeaea;
+  border:1px solid #e74c3c;
+  color:#e74c3c;
+  padding:12px;
+  border-radius:8px;
+}

@@ -1,8 +1,24 @@
-import React from "react";
+import { useState } from "react";
 import "./SystemCards.css";
+import waterfallUp from "./Images/WhatsAppVideo2026-03-13at6.17.55PM-ezgif.com-video-to-gif-converter.gif";
+import waterfallDown from './Images/ezgif.com-animated-gif-maker (1).gif'
 
 const SystemCards = () => {
+    const [action,setAction] = useState("");
   const systems = [1, 2, 3];
+
+  const [popupOpen,setPopupOpen] = useState(false);
+  const [activeSystem,setActiveSystem] = useState(null);
+  const openPopup = (num, type)=>{
+  setActiveSystem(num);
+  setAction(type);
+  setPopupOpen(true);
+};
+
+  const closePopup = ()=>{
+    setPopupOpen(false);
+  };
+
 
   return (
     <div className="container">
@@ -16,10 +32,10 @@ const SystemCards = () => {
               <span className="system-number">{num}</span>
             </div>
 
-            <button className="up-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+            <button className="up-btn"  onClick={()=>openPopup(num,"UP")}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
              Up</button>
 
-            <button className="down-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg> Down</button>
+            <button className="down-btn" onClick={()=>openPopup(num,"DOWN")}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg> Down</button>
 
          <div className="card-info">
   
@@ -65,6 +81,40 @@ const SystemCards = () => {
         </div>
       </div>
     </div>
+     {popupOpen && (
+        <div className="popup-overlay">
+
+          <div className="popup">
+
+            <span className="close-btn" onClick={closePopup}>×</span>
+
+            <div className="popup-icon">💧</div>
+
+            <h2>System {activeSystem}</h2>
+
+          <div className={`success-box ${action === "DOWN" ? "error-box" : "success-green"}`}>
+  {action === "UP" ? (
+    <>
+      <p>▶ Water flow has been started</p>
+      <small>System {activeSystem} is now running</small>
+    </>
+  ) : (
+    <>
+      <p>▶ Water flow has been stopped.</p>
+      <small>System {activeSystem} is now inactive.</small>
+    </>
+  )}
+</div>
+
+<img 
+  src={action === "UP" ? waterfallUp : waterfallDown} 
+  alt="water status" 
+  className="popup-img"
+/>
+          </div>
+
+        </div>
+      )}
     </div>
   );
 };
