@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Navbar from './Component/Navbar';
 import SystemCards from './Component/SystemCards';
@@ -6,8 +6,8 @@ import SystemCards from './Component/SystemCards';
 function App() {
   return (
     <div className="App">
-   <Navbar/>
-   <SystemCards/>
+      <Navbar />
+      <SystemCards />
     </div>
   );
 }
