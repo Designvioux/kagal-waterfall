@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./SystemCards.css";
 import waterfallUp from "./Images/WhatsAppVideo2026-03-13at6.17.55PM-ezgif.com-video-to-gif-converter.gif";
 import waterfallDown from './Images/ezgif.com-animated-gif-maker (1).gif'
@@ -9,6 +9,13 @@ const SystemCards = () => {
 
   const [popupOpen,setPopupOpen] = useState(false);
   const [activeSystem,setActiveSystem] = useState(null);
+  useEffect(() => {
+  const img1 = new Image();
+  img1.src = waterfallUp;
+
+  const img2 = new Image();
+  img2.src = waterfallDown;
+}, []);
   const openPopup = (num, type)=>{
   setActiveSystem(num);
   setAction(type);
@@ -39,7 +46,7 @@ const SystemCards = () => {
 
          <div className="card-info">
   
-  <div className="info-row">
+  {/* <div className="info-row">
     <p>Send Time</p>
     <h1>3/13/2026, 12:20:21 PM</h1>
   </div>
@@ -47,7 +54,7 @@ const SystemCards = () => {
   <div className="info-row">
     <p>Command</p>
     <b>UP</b>
-  </div>
+  </div> */}
 
 </div>
 
